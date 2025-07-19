@@ -15,6 +15,12 @@ Frontend Zero to Hero
 ### Proje Lisans Bilgileri
 ---
 ## HTML5
+html_tutorial
+temel htm etiketleri
+html_tutorial_1
+Email,telefon , Sosyal Medya , Ses, Video Ekleme
+html_tutorial_2
+Emoji ,Favicon ,Iframe ,Map ,List yapıları
 ---
 ## CSS
 ---
