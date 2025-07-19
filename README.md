@@ -23,6 +23,8 @@ Frontend Zero to Hero
 ## Email,telefon , Sosyal Medya , Ses, Video Ekleme
 ## html_tutorial_2
 ## Emoji ,Favicon ,Iframe ,Map ,List yapıları
+## html_tutorial_2.1.html
+## data list yapıları
 ---
 ## CSS
 ---
