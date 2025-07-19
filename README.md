@@ -15,6 +15,8 @@ Frontend Zero to Hero
 ### Proje Lisans Bilgileri
 ---
 ## HTML5
+## frontend html
+## Html template yapımı
 ## html_tutorial
 ## temel htm etiketleri
 ## html_tutorial_1
