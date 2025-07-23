@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>,Tablo uygulamaları</title>
+  </head>
+  <body>
+    <h1>Form ve Textarea yapıları</h1>
+    <!--Form yapıları bilgi girmek için kullanılır ve input'la kullanıcıdan bilgi alınır Get metodu şifresiz Post metodu veriyi şifreli gönderir otomtik tamamlama açık autofocus imleç girdi kutusunda yanıp söner-->
+    <form action="#" method="get" autocomplete="on" target="_blank">
+      <label for="uname">Adınız:</label><br />
+      <input
+        type="text"
+        id="uname"
+        title="adınız"
+        placeholder="Adınızı giriniz"
+        required
+        autofocus
+      /><br /><br />
+      <label for="surname">Soyadınız:</label><br />
+      <input
+        type="text"
+        id="surname"
+        title="soyad"
+        placeholder="Soyadınızı giriniz"
+        required
+        autofocus
+      /><br /><br />
+      <label for="email">E-posta:</label><br />
+      <input
+        type="uemail"
+        id="email"
+        title="email"
+        placeholder="E-posta adresinizi giriniz"
+        required
+        autofocus
+      /><br /><br />
+      <label for="upassword">Şifreniz</label><br />
+      <input
+        type="password"
+        name=""
+        value="password"
+        id="upassword"
+        title="şifreniz"
+        placeholder="şifrenizi giriniz"
+        required
+      />
+      <br />
+      <tr><!--<input type="submit" value="Gönder" /><br /><br />-->
+      <td><button type="submit" value="GönderS">Gönder</button><br />
+      <!--<input type="reset" value="Temizle" /><br />-->
+      <input type="reset" value="Sıfırla" /></td><br /><br />
+    </tr>
+      
+
+      <br /><br />
+      <!--Mesaj kutusu-->
+      <label for="mesaj">Mesajınızı bırakınız:</label>
+      <textarea
+        name="mesaj"
+        id="mesaj"
+        title="mesajınızı buraya bırakınız"
+        placeholder="Mesajınızı buraya bırakınız "
+        rows="5"
+        cols="35"
+        required
+      ></textarea
+      ><br /><br />
+      <input type="submit" name="" id="" value="Gönder" />
+    </form>
+    <h1>Tablolar</h1>
+    <!--
+    1-Html tablolar ,web sayfalarında verileri düzenlemek ve görsel olarrak düzenli bir şekilde göstermek için kullanılan yapı unsurlarıdır.
+    2-Tablolar,satırlar (Table Cells <td> etiketi) ve sütunlardan (Table Rows <tr>etiketi)oluşur ve çeşitli verileri organize etmek için kullanılır -->
+    <thead>
+      <table border="1" width="100%" cellspacing="0" cellpadding="5">
+        <tr><!--Form + Tablo-->
+          <td><label for="uname">Adınız</label></td>
+          <td><input type="text" id="uname" title="Adınız" placeholder="Adınız"></td>
+        </tr>
+        <tr>
+          <td><label for="surname">Soyadınız</label></td>
+          <td><input type="text" id="surname" title="Soyadınız" placeholder="Soyadınız"></td>
+        </tr>
+        <tr>
+          <td><label for="email">E-posta</label></td>
+          <td><input type="email" id="email" title="E-posta" placeholder="E-posta"></td>
+        </tr>
+        <tr>
+          <th>ID</th>
+          <th>ADI</th>
+          <th>EMAIL</th>
+          <th>PASSWORD</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Adı-1</td>
+          <td>Soyadı-1</td>
+          <td>Şifre-1</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Adı-2</td>
+          <td>Soyadı-2</td>
+          <td>Şifre-2</td>
+        </tr>
+        
+        
+        </tbody>
+      </table>
+      <tfoot>
+        <tr>
+          <td colspan="4">&copy; bütün haklar saklıdır.</td>
+        </tr>
+      </tfoot>
+    
+  </body>
+</html>
