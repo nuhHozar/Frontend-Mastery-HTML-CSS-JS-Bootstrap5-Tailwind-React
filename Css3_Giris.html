@@ -33,13 +33,31 @@
         column-count: 3 !important ; /* sütun sayısı */
         column-gap: 20px !important; /* sütunlar arası boşluk */
         margin: 20px !important; /* dış boşluk */
+        column-rule: 1px solid brown !important; /* sütunlar arası çizgi */
+        display: -webkit-box; /* eski tarayıcılar için */
+        -webkit-box-orient: vertical; /* eski tarayıcılar için */
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 5; /* satır sayısını sınırla */
+        /* Bu özellik, metni 5 satırla sınırlar ve taşan metni gizler */
       }
     </style>
   </head>
   <body>
     <!--start codes-->
     <!--<p style="color: blue;"> merhaba ben css3</style></p>-->
-    <p id="parag_id">
+    <p id="parag_id">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga facilis,
+      doloremque qui aut neque placeat a sit totam ipsam nostrum ab asperiores.
+      Repellendus quasi dicta ipsum, in esse deleniti nam. Natus accusantium
+      pariatur dolorum saepe a! Ullam quidem hic perferendis vero repellat
+      molestiae esse, sit quia, exercitationem dignissimos delectus error
+      consequatur quo. Corporis harum id itaque, perferendis numquam officia
+      velit. Eum, quaerat? Quos veniam, sunt aspernatur consequuntur placeat
+      alias commodi ipsam pariatur qui minus perferendis nesciunt architecto.
+      Repellat reprehenderit delectus, quaerat pariatur quod commodi, possimus
+      dolores perspiciatis corporis, optio placeat! Repellat voluptatibus nemo
+      provident, dolor recusandae possimus incidunt quod ullam quis doloremque!
+      
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia fugit
       cum laboriosam, deserunt fugiat odit id enim at atque hic unde corrupti
       velit maiores error reiciendis dolorem sequi modi aliquid. Aliquam fugit
@@ -58,5 +76,6 @@
     <!--end codes-->
   </body>
 </html>
+
 
 
