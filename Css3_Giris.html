@@ -41,10 +41,35 @@
         -webkit-line-clamp: 5; /* satır sayısını sınırla */
         /* Bu özellik, metni 5 satırla sınırlar ve taşan metni gizler */
       }
+      .div_class {
+        color: green;
+        font-size: 20px;
+        text-align: center;
+        background-color: lightblue;
+        padding: 10px;
+        border: 2px solid #3cc !important;
+        border-radius: 5px;
+        /* margin: 10px;
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;*/
+        margin: 10px 20px 30px 40px; /* üst sağ alt sol */
+        /* margin: 10px auto; */ /* üst alt boşluk, sağ sol otomatik */
+        /* margin: 10px 20px; */ /* üst alt 10px, sağ sol 20px */
+        /* margin: 10px 20px 30px; */ /* üst 10px, sağ sol 20px, alt 30px */
+        /* margin: 10px 20px 30px 40px; */ /* üst 10px, sağ 20px, alt 30px, sol 40px */
+        /* margin: 10px; */ /* tüm kenarlar için 10px boşluk*/
+      } /* class yapısı */
+      /* class yapısı, birden fazla öğeye uygulanabilir */
     </style>
   </head>
   <body>
     <!--start codes-->
+     <div class="div_class">1.ALAN</div>
+    <div class="div_class">2.ALAN</div>
+    <div class="div_class">3.ALAN</div>
+    <hr>
     <!--<p style="color: blue;"> merhaba ben css3</style></p>-->
     <p id="parag_id">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga facilis,
       doloremque qui aut neque placeat a sit totam ipsam nostrum ab asperiores.
@@ -76,6 +101,7 @@
     <!--end codes-->
   </body>
 </html>
+
 
 
 
