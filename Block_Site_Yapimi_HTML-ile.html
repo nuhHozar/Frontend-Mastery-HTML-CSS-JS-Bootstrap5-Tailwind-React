@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nuh Hozar Blog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light text-dark">
+
+<div class="container py-5">
+  <h1 class="text-center mb-4 text-3xl font-bold">📝 Nuh Hozar Blog</h1>
+
+  <!-- Giriş & Kayıt Formu -->
+  <div class="card p-4 mb-4">
+    <h2 class="text-xl mb-3">Giriş / Kayıt</h2>
+    <form id="authForm" class="row g-2">
+      <div class="col-md-4">
+        <input type="text" id="name" class="form-control" placeholder="Adınız (Kayıt için)" />
+      </div>
+      <div class="col-md-4">
+        <input type="email" id="email" class="form-control" placeholder="Email" required />
+      </div>
+      <div class="col-md-4">
+        <input type="password" id="password" class="form-control" placeholder="Şifre" required />
+      </div>
+      <div class="col-md-12">
+        <button class="btn btn-success" type="button" onclick="register()">Kayıt Ol</button>
+        <button class="btn btn-primary" type="button" onclick="login()">Giriş Yap</button>
+      </div>
+    </form>
+    <div id="girisDurumu" class="mt-3 text-success fw-bold"></div>
+  </div>
+
+  <!-- Yorum Formu -->
+  <div id="yorumFormDiv" class="card p-4 mb-4 d-none">
+    <h2 class="text-xl mb-3">💬 Yorum Bırak</h2>
+    <textarea id="yorumInput" class="form-control mb-3" placeholder="Yorumunuzu yazın..."></textarea>
+    <button class="btn btn-warning" onclick="yorumGonder()">Yorum Gönder</button>
+  </div>
+
+  <!-- Yorumlar -->
+  <div class="card p-4">
+    <h2 class="text-xl mb-3">📬 Yorumlar</h2>
+    <div id="yorumlar"></div>
+  </div>
+</div>
+
+<script>
+  let userId = null;
+
+  function register() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    fetch('/api/register', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({name, email, password})
+    }).then(res => res.text()).then(msg => alert(msg));
+  }
+
+  function login() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    fetch('/api/login', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({email, password})
+    }).then(res => {
+      if (res.ok) return res.json();
+      else throw new Error("Giriş başarısız");
+    }).then(data => {
+      userId = data.userId;
+      document.getElementById("girisDurumu").innerText = "Hoş geldin, " + data.name;
+      document.getElementById("yorumFormDiv").classList.remove("d-none");
+      yorumlariGetir();
+    }).catch(err => alert(err.message));
+  }
+
+  function yorumGonder() {
+    const yorum = document.getElementById("yorumInput").value;
+    if (!yorum) return alert("Yorum boş olamaz.");
+
+    fetch('/api/comment', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({user_id: userId, comment: yorum})
+    }).then(res => res.text()).then(() => {
+      yorumlariGetir();
+      document.getElementById("yorumInput").value = "";
+    });
+  }
+
+  function yorumlariGetir() {
+    fetch('/api/comments')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("yorumlar").innerHTML = data.map(y => `
+          <div class="border-bottom py-2">
+            <strong>${y.name}</strong><br/>
+            <small>${new Date(y.created_at).toLocaleString()}</small>
+            <p>${y.comment}</p>
+          </div>
+        `).join('');
+      });
+  }
+
+  window.onload = yorumlariGetir;
+</script>
+</body>
+</html>
