@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Html ile Modern Profesyonel CV</title>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --bg-color: #f4f7f6;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+        
+        .cv-container { max-width: 900px; margin: 40px auto; background: white; display: flex; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
+        
+        /* Sol Sütun */
+        .sidebar { width: 35%; background: var(--primary-color); color: white; padding: 40px 30px; }
+        .sidebar h2 { font-size: 1.2rem; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 5px; text-transform: uppercase; }
+        .profile-img { width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--accent-color); margin-bottom: 20px; object-fit: cover; }
+        .contact-info p { font-size: 0.9rem; margin-bottom: 10px; opacity: 0.9; }
+        .skills-list { list-style: none; }
+        .skills-list li { font-size: 0.9rem; margin-bottom: 8px; background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 4px; }
+
+        /* Sağ Sütun */
+        .main-content { width: 65%; padding: 40px; }
+        .header-name { margin-bottom: 30px; }
+        .header-name h1 { font-size: 2.5rem; color: var(--primary-color); }
+        .header-name p { font-size: 1.1rem; color: var(--accent-color); font-weight: 600; }
+        
+        .section { margin-bottom: 30px; }
+        .section-title { font-size: 1.4rem; color: var(--primary-color); border-left: 4px solid var(--accent-color); padding-left: 15px; margin-bottom: 20px; }
+        .experience-item { margin-bottom: 15px; }
+        .experience-item h3 { font-size: 1.1rem; }
+        .experience-item span { font-size: 0.85rem; color: #777; font-style: italic; }
+        
+        @media (max-width: 768px) {
+            .cv-container { flex-direction: column; margin: 0; }
+            .sidebar, .main-content { width: 100%; }
+        }
+        
+        @media print {
+            body { background: white; }
+            .cv-container { box-shadow: none; margin: 0; width: 100%; }
+            .sidebar { background: #2c3e50 !important; -webkit-print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="cv-container">
+    <!-- Sol Panel -->
+    <aside class="sidebar">
+        <!-- Buraya profil fotoğrafı linki ekleyebilirsiniz -->
+        <img src="https://via.placeholder.com" alt="Profil" class="profile-img">
+        
+        <h2>İletişim</h2>
+        <div class="contact-info">
+            <p>📍 İstanbul, Türkiye</p>
+            <p>📧 adsoyad@email.com</p>
+            <p>📞 +90 5xx xxx xx xx</p>
+            <p>🔗 ://linkedin.com</p>
+        </div>
+
+        <br>
+        <h2>Yetenekler</h2>
+        <ul class="skills-list">
+            <li>HTML5 & CSS3</li>
+            <li>JavaScript (ES6+)</li>
+            <li>React.js</li>
+            <li>Git & GitHub</li>
+            <li>Responsive Design</li>
+        </ul>
+
+        <br>
+        <h2>Diller</h2>
+        <p>Türkçe (Anadil)</p>
+        <p>İngilizce (B2)</p>
+    </aside>
+
+    <!-- Sağ Panel -->
+    <main class="main-content">
+        <div class="header-name">
+            <h1>AD SOYAD</h1>
+            <p>Frontend Developer</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Profil</h2>
+            <p>Yenilikçi teknolojilere meraklı, kullanıcı deneyimi odaklı projeler geliştiren bir yazılımcıyım. Karmaşık problemleri basit ve etkili kod çözümleriyle gidermeyi hedefliyorum.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Deneyim</h2>
+            <div class="experience-item">
+                <h3>Senior Frontend Developer - Teknoloji A.Ş.</h3>
+                <span>Ocak 2021 - Günümüz</span>
+                <ul>
+                    <li>React kullanarak kullanıcı arayüzü bileşenleri geliştirildi.</li>
+                    <li>Site hızı %40 oranında optimize edildi.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Web Geliştirici - StartUp X</h3>
+                <span>Haziran 2018 - Aralık 2020</span>
+                <ul>
+                    <li>Modern, duyarlı web siteleri tasarlandı ve kodlandı.</li>
+                    <li>Backend ekipleriyle API entegrasyonları yapıldı.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Eğitim</h2>
+            <div class="experience-item">
+                <h3>Bilgisayar Mühendisliği</h3>
+                <p>X Üniversitesi - 2018 Mezunu</p>
+            </div>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>
+
+</body>
+</html>
